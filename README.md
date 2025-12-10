@@ -1,10 +1,22 @@
 # PyTest Selenium Testing Framework
 
-A complete testing framework that supports UI testing, API testing, modular design, fixtures, and more.
+A lightweight example project showing API and UI testing with pytest,
+requests, and selenium.
 
-## 🚀 How to Run Tests
-```
+## Setup
+```bash
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
-pytest
 ```
-# pytest-selenium-testing-framework
+
+## Running tests
+- All tests: `pytest`
+- API tests only: `pytest tests/test_api_users.py`
+- UI test only: `pytest tests/test_ui_login.py`
+
+## Notes
+- API tests are stubbed to avoid external network calls (see `framework/api_client.py`).
+- The UI test uses Selenium. If Chrome/Chromium is unavailable, the fixture
+  falls back to a dummy driver so the test can still pass. Install Chrome to
+  exercise a real browser run. 
